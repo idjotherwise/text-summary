@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ build, test ]
     env:
-      HEROKU_APP_NAME: summar-maker
+      HEROKU_APP_NAME: summary-maker
       HEROKU_REGISTRY_IMAGE: registry.heroku.com/${HEROKU_APP_NAME}/summarizer
     steps:
       - name: Checkout master
