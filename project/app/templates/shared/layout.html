@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An API to summarise the content of a webpage">
+    <meta name="author" content="Ifan Johnston">
+
+    <title>Summary Maker</title>
+
+    <link href="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/static/css/theme.css" rel="stylesheet">
+    <link href="app/static/css/docs.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="starter-template">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+
+                    <img src="/app/static/img/cloud.png" style="float: left; max-width: 48px; margin-right: 20px;" alt="">
+                    <h1>
+                        <span class="font-semi-bold">Summary Maker</span>
+                        <div class="font-semi-bold navlist" style="float:right;">
+                                                        {% set navigation_bar = [
+                                ('/', 'index', 'Home')
+                            ] -%}
+                            {% set active_page = active_page|default('index') -%}
+
+                            <ul id="navigation">
+                            {% for href, id, caption in navigation_bar %}
+                              <li{% if id == active_page %} class="active"{% endif
+                              %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </h1>
+
+
+
+            </div>
+            <div class="col-md-10">
+                <div>
+                        {% block content %}
+                            <div class="content">
+                                THIS PAGE HAS NO CONTENT
+                            </div>
+                        {% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="links">
+                <ul>
+                    <li><i class="glyphicon glyphicon-cog icon-muted"></i><a
+                            href="https://github.com/idjotherwise/summary-maker"
+                            target="_blank">Github Project</a></li>
+                    <li><i class="glyphicon glyphicon-globe icon-muted"></i><a href="https://twitter.com/JohnstonIfan"
+                                                                               target="_blank">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

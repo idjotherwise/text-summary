@@ -5,3 +5,5 @@ asyncpg==0.22.0
 tortoise-orm==0.16.21
 requests==2.25.1
 newspaper3k==0.2.8
+aiofiles
+jinja2

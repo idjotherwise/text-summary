@@ -1,0 +1,25 @@
+{% extends "shared/layout.html" %}
+{% set active_page = "index" %}
+{% block content %}
+
+
+    <div style="clear:both;"></div>
+    <br>
+    <br>
+    <p class="lead">
+        The <a href="https://idjotherwise.github.io/nlp-otherwise/">Otherwise</a> Summary Maker, based on the <a href="https://testdriven.io/courses/tdd-fastapi/">Test Driven Development</a> FastAPI course (using Docker)<br>
+        <br>
+<p>You can use this API to summarise a web page</p>
+    {% if summaries %}
+    <div>
+        <h2>Summaries of web pages:</h2>
+        <ul>
+            {% for s in summaries %}
+            <li> <a href="{{ s.url }}">{{ s.url }}</a><p>{{ s.summary }}</p></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    </div>
+
+{% endblock %}
