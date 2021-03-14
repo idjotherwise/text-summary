@@ -9,7 +9,16 @@
     <p class="lead">
         The <a href="https://idjotherwise.github.io/nlp-otherwise/">Otherwise</a> Summary Maker, based on the <a href="https://testdriven.io/courses/tdd-fastapi/">Test Driven Development</a> FastAPI course (using Docker)<br>
         <br>
-<p>You can use this API to summarise a web page</p>
+<p>You can use this API to summarise a web page. Here is an example of using <a href="https://httpie.io/"><code>httpie</code></a> to POST a url:</p>
+<ul>
+    <li>
+    <strong><code>http --json POST https://summary-maker.herokuapp.com/summaries/ url=https://www.idjotherwise.github.io/nlp-otherwise</code></strong>
+    </li>
+    <p>Or using <code>curl</code></p>
+    <li>
+        <code>curl -d '{"url":"https://idjotherwise.github.io/nlp-otherwise"}' -H "Content-Type: application/json" -X POST https://summary-maker.herokuapp.com/summaries/</code>
+    </li>
+</ul>
     {% if summaries %}
     <div>
         <h2>Summaries of web pages:</h2>
