@@ -12,7 +12,7 @@ log = logging.getLogger("uvicorn")
 
 def create_application() -> FastAPI:
     application = FastAPI()
-    application.mount('/app/static', StaticFiles(directory='app/static'), name='static')
+    application.mount("/app/static", StaticFiles(directory="app/static"), name="static")
     application.include_router(ping.router)
     application.include_router(
         summaries.router, prefix="/summaries", tags=["summaries"]
